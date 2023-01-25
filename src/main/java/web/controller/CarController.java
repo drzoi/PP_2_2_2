@@ -15,6 +15,7 @@ public class CarController {
 
     @GetMapping("/cars")
     public String viewCars(@RequestParam(value = "count", defaultValue = "5") int count, ModelMap model) {
+        count = (count > 0) ? count : 5;
         model.addAttribute("carToWebpage", carService.returnCars(count));
         return "cars";
     }
