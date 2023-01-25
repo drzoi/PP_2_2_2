@@ -21,6 +21,7 @@ public class CarDaoImp implements CarDao{
         carList.add(car3);
         carList.add(car4);
         carList.add(car5);
+        count = (count >= 0) ? count : 5;
         return carList.stream().limit(count).toList();
     }
 }
