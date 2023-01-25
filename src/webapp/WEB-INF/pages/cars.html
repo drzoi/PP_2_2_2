@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <style>
+        table {
+            border: 1px solid;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid;
+        }
+        th {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr><th>Модель</th><th>Мощность</th><th>Цвет</th></tr>
+    <th:block th:each="car : ${carToWebpage}">
+        <tr><td th:text="${car.getModel()}"></td><td
+                th:text="${car.getPower()}"></td><td
+                th:text="${car.getColor()}"></td></tr>
+    </th:block>
+</table>
+</body>
+</html>
